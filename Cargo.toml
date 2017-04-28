@@ -1,0 +1,6 @@
+[package]
+name = "lazy_cat"
+version = "1.0.0"
+authors = ["Jacob Kiesel <kieseljake@gmail.com>"]
+
+[dependencies]
