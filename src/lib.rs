@@ -3,8 +3,8 @@ use std::fmt::{Debug, Display, Formatter};
 
 /// Structure created by lazy_cat! macro.
 ///
-/// Implements Display and ToString.  It is recommended to use this in generics,
-/// as the generic arguments A and B are typically recursive.
+/// Implements Display and ToString.  The generic arguments A and B are typically recursive, so I
+/// advise you to not statically define them.  Use generics for them.
 /// This structure will consume everything given to the lazy_cat! macro
 /// then when a string version of this is requested it will be built on the fly by using the
 /// Display implementations of everything it has consumed.
@@ -38,16 +38,21 @@ impl<A: Display + Sized, B: Display + Sized> LazyStr<A, B> {
     }
 }
 
-/// Creates a LazyStr from several things that are Display + Sized.
+/// Creates a LazyStr from several things that are Display + Sized, consuming them in the process.
+/// (Use references or Copy types)
 ///
-/// Examples:
+/// # Examples
 ///
-/// ```Rust
+/// ```
+/// # #[macro_use]
+/// # extern crate lazy_cat;
+/// # fn main() {
+/// use lazy_cat::LazyStr;
+///
 /// assert_eq!("Hello world!", lazy_cat!("Hello", " world!").to_string());
-///
 /// assert_eq!("Hello John Doe!", lazy_cat!("Hello ", "John ", "Doe!").to_string());
-///
 /// assert_eq!("123Hello", lazy_cat!(1, 2, 3, "Hello").to_string());
+/// # }
 /// ```
 #[macro_export]
 macro_rules! lazy_cat {
@@ -56,15 +61,4 @@ macro_rules! lazy_cat {
     ($x:expr, $($y:expr),+) => (
         LazyStr::new($x, lazy_cat!($($y),+))
     )
-}
-
-#[cfg(test)]
-mod tests {
-    use LazyStr;
-    #[test]
-    fn it_works() {
-        assert_eq!("Hello world!", lazy_cat!("Hello", " world!").to_string());
-        assert_eq!("Hello John Doe!", lazy_cat!("Hello ", "John ", "Doe!").to_string());
-        assert_eq!("123Hello", lazy_cat!(1, 2, 3, "Hello").to_string());
-    }
 }

@@ -1,1 +1,1 @@
-initSidebarItems({"macro":[["lazy_cat","Creates a LazyStr from several things that are Display + Sized."]],"struct":[["LazyStr","Structure created by lazy_cat! macro."]]});
+initSidebarItems({"macro":[["lazy_cat","Creates a LazyStr from several things that are Display + Sized, consuming them in the process. (Use references or Copy types)"]],"struct":[["LazyStr","Structure created by lazy_cat! macro."]]});

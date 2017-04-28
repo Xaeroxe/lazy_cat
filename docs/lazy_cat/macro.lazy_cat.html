@@ -48,22 +48,22 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/lazy_cat/lib.rs.html#53-59' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/lazy_cat/lib.rs.html#58-64' title='goto source code'>[src]</a></span></h1>
 <pre class="rust macro">
 <span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">lazy_cat</span> {
     (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">x</span>:<span class="ident">expr</span>) <span class="op">=&gt;</span> { ... };
     (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">x</span>:<span class="ident">expr</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">y</span>:<span class="ident">expr</span>),<span class="op">+</span>) <span class="op">=&gt;</span> { ... };
 }</pre>
-<div class='docblock'><p>Creates a LazyStr from several things that are Display + Sized.</p>
+<div class='docblock'><p>Creates a LazyStr from several things that are Display + Sized, consuming them in the process.
+(Use references or Copy types)</p>
 
-<p>Examples:</p>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">lazy_cat</span>::<span class="ident">LazyStr</span>;
 
-<pre><code class="language-Rust">assert_eq!(&quot;Hello world!&quot;, lazy_cat!(&quot;Hello&quot;, &quot; world!&quot;).to_string());
-
-assert_eq!(&quot;Hello John Doe!&quot;, lazy_cat!(&quot;Hello &quot;, &quot;John &quot;, &quot;Doe!&quot;).to_string());
-
-assert_eq!(&quot;123Hello&quot;, lazy_cat!(1, 2, 3, &quot;Hello&quot;).to_string());
-</code></pre>
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="string">&quot;Hello world!&quot;</span>, <span class="macro">lazy_cat</span><span class="macro">!</span>(<span class="string">&quot;Hello&quot;</span>, <span class="string">&quot; world!&quot;</span>).<span class="ident">to_string</span>());
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="string">&quot;Hello John Doe!&quot;</span>, <span class="macro">lazy_cat</span><span class="macro">!</span>(<span class="string">&quot;Hello &quot;</span>, <span class="string">&quot;John &quot;</span>, <span class="string">&quot;Doe!&quot;</span>).<span class="ident">to_string</span>());
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="string">&quot;123Hello&quot;</span>, <span class="macro">lazy_cat</span><span class="macro">!</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">&quot;Hello&quot;</span>).<span class="ident">to_string</span>());</pre>
 </div></section>
     <section id='search' class="content hidden"></section>
 

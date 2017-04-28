@@ -51,8 +51,8 @@
                </span><a class='srclink' href='../src/lazy_cat/lib.rs.html#11-14' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct LazyStr&lt;A:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>, B:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>&gt; { /* fields omitted */ }</pre><div class='docblock'><p>Structure created by lazy_cat! macro.</p>
 
-<p>Implements Display and ToString.  It is recommended to use this in generics,
-as the generic arguments A and B are typically recursive.
+<p>Implements Display and ToString.  The generic arguments A and B are typically recursive, so I
+advise you to not statically define them.  Use generics for them.
 This structure will consume everything given to the lazy_cat! macro
 then when a string version of this is requested it will be built on the fly by using the
 Display implementations of everything it has consumed.</p>
