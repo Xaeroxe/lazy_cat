@@ -5,7 +5,7 @@ authors = ["Jacob Kiesel <kieseljake@gmail.com>"]
 repository = "https://github.com/Xaeroxe/lazy_cat"
 description = "Lazy concatenation of strings and other things in Rust."
 license = "MIT/Apache-2.0"
-documentation = "https://xaeroxe.github.io/lazy_cat/lazy_cat/macro.lazy_cat.html"
+documentation = "https://xaeroxe.github.io/lazy_cat/lazy_cat/index.html"
 exclude = ["docs/*"]
 
 [dependencies]
