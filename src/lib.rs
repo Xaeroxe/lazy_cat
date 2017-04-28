@@ -1,5 +1,6 @@
 use std::fmt;
 use std::fmt::{Debug, Display, Formatter};
+use std::ops::Add;
 
 /// Structure created by lazy_cat! macro.
 ///
@@ -11,6 +12,14 @@ use std::fmt::{Debug, Display, Formatter};
 pub struct LazyStr<A: Display + Sized, B: Display + Sized> {
     a: A,
     b: B,
+}
+
+impl<A: Display + Sized, B: Display + Sized, C: Display + Sized> Add<C> for LazyStr<A, B> {
+    type Output = LazyStr<LazyStr<A, B>, C>;
+
+    fn add(self, other: C) -> LazyStr<LazyStr<A, B>, C> {
+        LazyStr::new(self, other)
+    }	
 }
 
 impl<A: Display + Sized, B: Display + Sized> Debug for LazyStr<A, B> {

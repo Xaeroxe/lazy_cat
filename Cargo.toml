@@ -1,6 +1,6 @@
 [package]
 name = "lazy_cat"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Jacob Kiesel <kieseljake@gmail.com>"]
 repository = "https://github.com/Xaeroxe/lazy_cat"
 description = "Lazy concatenation of strings and other things in Rust."
