@@ -48,7 +48,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/lazy_cat/lib.rs.html#50-56' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/lazy_cat/lib.rs.html#53-59' title='goto source code'>[src]</a></span></h1>
 <pre class="rust macro">
 <span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">lazy_cat</span> {
     (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">x</span>:<span class="ident">expr</span>) <span class="op">=&gt;</span> { ... };
@@ -56,8 +56,14 @@
 }</pre>
 <div class='docblock'><p>Creates a LazyStr from several things that are Display + Sized.</p>
 
-<p>Examples:
-<code>Rust assert_eq!(&quot;Hello world!&quot;, lazy_cat!(&quot;Hello&quot;, &quot; world!&quot;).to_string()); assert_eq!(&quot;Hello John Doe!&quot;, lazy_cat!(&quot;Hello &quot;, &quot;John &quot;, &quot;Doe!&quot;).to_string()); assert_eq!(&quot;123Hello&quot;, lazy_cat!(1, 2, 3, &quot;Hello&quot;).to_string());</code></p>
+<p>Examples:</p>
+
+<pre><code class="language-Rust">assert_eq!(&quot;Hello world!&quot;, lazy_cat!(&quot;Hello&quot;, &quot; world!&quot;).to_string());
+
+assert_eq!(&quot;Hello John Doe!&quot;, lazy_cat!(&quot;Hello &quot;, &quot;John &quot;, &quot;Doe!&quot;).to_string());
+
+assert_eq!(&quot;123Hello&quot;, lazy_cat!(1, 2, 3, &quot;Hello&quot;).to_string());
+</code></pre>
 </div></section>
     <section id='search' class="content hidden"></section>
 

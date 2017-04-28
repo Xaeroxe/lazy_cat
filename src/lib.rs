@@ -41,9 +41,12 @@ impl<A: Display + Sized, B: Display + Sized> LazyStr<A, B> {
 /// Creates a LazyStr from several things that are Display + Sized.
 ///
 /// Examples:
+///
 /// ```Rust
 /// assert_eq!("Hello world!", lazy_cat!("Hello", " world!").to_string());
+///
 /// assert_eq!("Hello John Doe!", lazy_cat!("Hello ", "John ", "Doe!").to_string());
+///
 /// assert_eq!("123Hello", lazy_cat!(1, 2, 3, "Hello").to_string());
 /// ```
 #[macro_export]

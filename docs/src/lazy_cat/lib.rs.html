@@ -110,6 +110,9 @@
 <span id="65">65</span>
 <span id="66">66</span>
 <span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
 </pre><pre class="rust ">
 <span class="kw">use</span> <span class="ident">std</span>::<span class="ident">fmt</span>;
 <span class="kw">use</span> <span class="ident">std</span>::<span class="ident">fmt</span>::{<span class="ident">Debug</span>, <span class="ident">Display</span>, <span class="ident">Formatter</span>};
@@ -154,9 +157,12 @@
 <span class="doccomment">/// Creates a LazyStr from several things that are Display + Sized.</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// Examples:</span>
+<span class="doccomment">///</span>
 <span class="doccomment">/// ```Rust</span>
 <span class="doccomment">/// assert_eq!(&quot;Hello world!&quot;, lazy_cat!(&quot;Hello&quot;, &quot; world!&quot;).to_string());</span>
+<span class="doccomment">///</span>
 <span class="doccomment">/// assert_eq!(&quot;Hello John Doe!&quot;, lazy_cat!(&quot;Hello &quot;, &quot;John &quot;, &quot;Doe!&quot;).to_string());</span>
+<span class="doccomment">///</span>
 <span class="doccomment">/// assert_eq!(&quot;123Hello&quot;, lazy_cat!(1, 2, 3, &quot;Hello&quot;).to_string());</span>
 <span class="doccomment">/// ```</span>
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
