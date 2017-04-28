@@ -1,0 +1,1 @@
+initSidebarItems({"macro":[["lazy_cat","Creates a LazyStr from several things that are Display + Sized."]],"struct":[["LazyStr","Structure created by lazy_cat! macro."]]});
