@@ -19,7 +19,7 @@ impl<A: Display + Sized, B: Display + Sized, C: Display + Sized> Add<C> for Lazy
 
     fn add(self, other: C) -> LazyStr<LazyStr<A, B>, C> {
         LazyStr::new(self, other)
-    }	
+    }
 }
 
 impl<A: Display + Sized, B: Display + Sized> Debug for LazyStr<A, B> {
@@ -56,8 +56,6 @@ impl<A: Display + Sized, B: Display + Sized> LazyStr<A, B> {
 /// # #[macro_use]
 /// # extern crate lazy_cat;
 /// # fn main() {
-/// use lazy_cat::LazyStr;
-///
 /// assert_eq!("Hello world!", lazy_cat!("Hello", " world!").to_string());
 /// assert_eq!("Hello John Doe!", lazy_cat!("Hello ", "John ", "Doe!").to_string());
 /// assert_eq!("123Hello", lazy_cat!(1, 2, 3, "Hello").to_string());
@@ -68,6 +66,6 @@ macro_rules! lazy_cat {
     ($x:expr) => ($x);
     // `$x` followed by at least one `$y,`
     ($x:expr, $($y:expr),+) => (
-        LazyStr::new($x, lazy_cat!($($y),+))
+        $crate::LazyStr::new($x, lazy_cat!($($y),+))
     )
 }

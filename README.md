@@ -1,13 +1,13 @@
 # lazy_cat [![Crates listing](https://img.shields.io/crates/v/lazy_cat.svg)](https://crates.io/crates/lazy_cat)
 Lazy concatenation of strings and other things in Rust.
 
+[Documentation](https://xaeroxe.github.io/lazy_cat/lazy_cat/index.html)
+
 Example:
 
 ```Rust
 #[macro_use]
 extern crate lazy_cat;
-
-use lazy_cat::LazyStr;
 
 fn main() {
   assert_eq!("Hello world!", lazy_cat!("Hello", " world!").to_string());
@@ -17,4 +17,3 @@ fn main() {
 
 ```
 
-[Documentation](https://xaeroxe.github.io/lazy_cat/lazy_cat/index.html)
