@@ -1,4 +1,4 @@
-# lazy_cat [![Crates listing](https://img.shields.io/crates/v/lazy_cat.svg)](https://crates.io/crates/lazy_cat)[![Travis](https://travis-ci.com/Xaeroxe/lazy_cat.svg?branch=master)](https://travis-ci.com/Xaeroxe/lazy_cat)
+# lazy_cat [![Crates listing](https://img.shields.io/crates/v/lazy_cat.svg)](https://crates.io/crates/lazy_cat) [![Travis](https://travis-ci.com/Xaeroxe/lazy_cat.svg?branch=master)](https://travis-ci.com/Xaeroxe/lazy_cat)
 Lazy concatenation of strings and other things in Rust.
 
 [Documentation](https://xaeroxe.github.io/lazy_cat/lazy_cat/index.html)
