@@ -40,10 +40,7 @@ impl<A: Display + Sized, B: Display + Sized> Display for LazyStr<A, B> {
 
 impl<A: Display + Sized, B: Display + Sized> LazyStr<A, B> {
     pub fn new(a: A, b: B) -> LazyStr<A, B> {
-        LazyStr {
-            a,
-            b,
-        }
+        LazyStr { a, b }
     }
 }
 
